@@ -1,5 +1,6 @@
-with open("02.txt") as file:
-    data = file.read()
+import helper
+
+data = helper.start(2)
 
 ranges = [list(map(int, r.split("-"))) for r in data.split(",")]
 
@@ -20,5 +21,5 @@ for [a, b] in ranges:
                 break
 
 
-print(f"Part 1: {invalid_counter1}")
-print(f"Part 2: {invalid_counter2}")
+helper.print_result(invalid_counter1)
+helper.print_result_and_time(invalid_counter2)

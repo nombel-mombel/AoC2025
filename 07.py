@@ -1,6 +1,6 @@
-with open("07.txt") as file:
-    data = file.read()
+import helper
 
+data = helper.start(7)
 
 lines = data.split()
 height = len(lines)
@@ -20,7 +20,7 @@ def follow_beam(x, y):
 
 
 result = follow_beam(start, 0)
-print(f"Part 1: {result}")
+helper.print_result_and_time(result)
 
 
 cache = {}
@@ -40,4 +40,4 @@ def follow_beam_paths(x, y):
 
 
 result = follow_beam_paths(start, 0) + 1
-print(f"Part 2: {result}")
+helper.print_result_and_time(result)

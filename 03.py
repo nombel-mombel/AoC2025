@@ -1,5 +1,6 @@
-with open("03.txt") as file:
-    data = file.read()
+import helper
+
+data = helper.start(3)
 
 
 def find_highest_in_range(line, start, end):
@@ -30,5 +31,5 @@ for line in data.split():
     max_joltage1 += optimal_joltage(line, 2)
     max_joltage2 += optimal_joltage(line, 12)
 
-print(f"Part 1: {max_joltage1}")
-print(f"Part 2: {max_joltage2}")
+helper.print_result(max_joltage1)
+helper.print_result_and_time(max_joltage2)

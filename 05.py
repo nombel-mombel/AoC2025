@@ -1,22 +1,12 @@
-with open("05.txt") as file:
-    data = file.read()
+import helper
+
+data = helper.start(5)
 
 fresh_ranges, ingredients = data.strip().split("\n\n")
 
 fresh_ranges = [tuple(map(int, r.split("-"))) for r in fresh_ranges.split()]
 ingredients = list(map(int, ingredients.split()))
 
-
-fresh_ingredients_count = 0
-
-for ingredient in ingredients:
-    for a, b in fresh_ranges:
-        if a <= ingredient <= b:
-            fresh_ingredients_count += 1
-            break
-
-
-print(f"Part 1: {fresh_ingredients_count}")
 
 done = False
 i = 0
@@ -47,4 +37,16 @@ while i < len(fresh_ranges):
     i += 1
 
 amount = sum(b - a + 1 for a, b in fresh_ranges)
-print(f"Part 2: {amount}")
+helper.print_result_and_time(amount, 2)
+
+
+fresh_ingredients_count = 0
+
+for ingredient in ingredients:
+    for a, b in fresh_ranges:
+        if a <= ingredient <= b:
+            fresh_ingredients_count += 1
+            break
+
+
+helper.print_result_and_time(fresh_ingredients_count, 1)

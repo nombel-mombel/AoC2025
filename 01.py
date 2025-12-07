@@ -1,5 +1,6 @@
-with open("01.txt") as file:
-    data = file.read()
+import helper
+
+data = helper.start(1)
 
 pos = 50
 count1 = 0
@@ -21,5 +22,5 @@ for line in data.split():
     if pos == 0:
         count1 += 1
 
-print(f"Part 1: {count1}")
-print(f"Part 2: {count2}")
+helper.print_result(count1)
+helper.print_result_and_time(count2)

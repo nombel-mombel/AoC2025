@@ -1,5 +1,6 @@
-with open("04.txt") as file:
-    data = file.read()
+import helper
+
+data = helper.start(4)
 
 
 data = [list(line) for line in data.split()]
@@ -21,7 +22,7 @@ for x in range(width):
                 accessible_count += 1
 
 
-print(f"Part 1: {accessible_count}")
+helper.print_result_and_time(accessible_count)
 
 
 removable_count = 0
@@ -42,4 +43,4 @@ while changed:
                     changed = True
 
 
-print(f"Part 2: {removable_count}")
+helper.print_result_and_time(removable_count)

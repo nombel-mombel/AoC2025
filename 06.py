@@ -1,5 +1,6 @@
-with open("06.txt") as file:
-    data = file.read()
+import helper
+
+data = helper.start(6)
 
 lines = [line.split() for line in data.splitlines()]
 numbers = lines[:-1]
@@ -17,7 +18,7 @@ for i, op in enumerate(operators):
             mul *= int(row[i])
         total += mul
 
-print(f"Part 1: {total}")
+helper.print_result_and_time(total)
 
 lines = data.splitlines()[:-1]
 
@@ -46,4 +47,4 @@ for op in operators:
         total += mul
     i += 1
 
-print(f"Part 2: {total}")
+helper.print_result_and_time(total)
