@@ -21,8 +21,12 @@ def print_result(result: int, part_overide: int | None = None):
 
 
 def print_result_and_time(result: int, part_overide: int | None = None):
-    global t
     print_result(result, part_overide)
+    print_time()
+
+
+def print_time():
+    global t
     t1 = time()
     print(f"-> Took {(t1 - t) * 1000:.2f}ms")
     t = t1
