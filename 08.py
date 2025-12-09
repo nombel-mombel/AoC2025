@@ -15,7 +15,9 @@ for i, a in enumerate(boxes):
         distance = (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2 + (a[2] - b[2]) ** 2
         distances.append((distance, a, b))
 
-distances.sort()
+distances.sort(key=lambda a: a[0])
+print("Preperation")
+helper.print_time()
 
 graph = {}
 for _, a, b in distances[:count]:
